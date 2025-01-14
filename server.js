@@ -34,10 +34,10 @@ if(process.env.NODE_STATUS === "development" ) {
 }
 else {
   app.use(
-      cors({
-        origin: "https://astrovnit.in",
-      })
-  );
+  cors({
+    origin: ["https://astrovnit.in", "http://localhost:3000"],
+  })
+);
 }
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
