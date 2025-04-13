@@ -31,14 +31,16 @@ const PORT = process.env.PORT || 5000;
 
 if (process.env.NODE_STATUS === "development") {
   app.use(cors());
-}
-else {
+} else {
   app.use(
     cors({
-      origin: [process.env.FRONTEND_URL, "http://localhost:3000"],
+      origin: ["https://aacvnit.netlify.app"],
+      methods: ["GET", "POST", "PUT", "DELETE"],
+      credentials: true,
     })
   );
 }
+
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
